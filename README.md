@@ -135,6 +135,22 @@ You can also prefill poster data in batches:
 python scripts\fetch_posters.py --limit 250
 ```
 
+## Offline Evaluation
+
+The recommender can be evaluated with ranking metrics by hiding some movies a user liked and checking whether the model recommends them back in the top K results.
+
+Generate the similarity matrix first, then run:
+
+```powershell
+python scripts\evaluate_recommender.py --k 10 --max-users 100
+```
+
+The script reports:
+
+- `precision@K`: how many of the top K recommendations were relevant
+- `recall@K`: how many held-out liked movies were recovered
+- `hit_rate@K`: how often at least one held-out liked movie appeared in the recommendations
+
 ## Secrets
 
 Do not commit real credentials.
