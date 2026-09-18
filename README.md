@@ -31,21 +31,41 @@ The app lets users create an account, save movie ratings, generate recommendatio
 
 ```text
 .
-├── recommender_app/
-│   ├── app.py
-│   ├── database.py
-│   ├── clean_content.csv
-│   └── ratings_title.csv
-├── scripts/
-│   ├── build_similarity_matrix.py
-│   ├── init_mysql.py
-│   └── fetch_posters.py
-├── .streamlit/
-│   └── secrets.example.toml
-├── DATABASE_SETUP.md
-├── requirements.txt
-└── README.md
+|-- code/
+|   |-- 1-Data-Cleaning-EDA.ipynb
+|   |-- 2-Content-Based-Filtering.ipynb
+|   |-- 3-Collaborative-Filtering .ipynb
+|   `-- 4-Hybrid-Recommendation-System.ipynb
+|-- data/
+|   |-- content.csv
+|   `-- ratings_title.csv
+|-- images/
+|-- recommender_app/
+|   |-- app.py
+|   |-- database.py
+|   |-- clean_content.csv
+|   `-- ratings_title.csv
+|-- scripts/
+|   |-- build_similarity_matrix.py
+|   |-- init_mysql.py
+|   `-- fetch_posters.py
+|-- .streamlit/
+|   `-- secrets.example.toml
+|-- DATABASE_SETUP.md
+|-- requirements.txt
+`-- README.md
 ```
+
+## Data Pipeline
+
+The notebook workflow shows how the final app data and recommenders were created:
+
+- `code/1-Data-Cleaning-EDA.ipynb`: cleaning, merging, and exploring MovieLens, TMDB, and IMDb data
+- `code/2-Content-Based-Filtering.ipynb`: content-based recommender using movie metadata
+- `code/3-Collaborative-Filtering .ipynb`: user-based collaborative filtering
+- `code/4-Hybrid-Recommendation-System.ipynb`: combined hybrid recommendation system
+
+The Streamlit app uses the cleaned outputs in `recommender_app/`.
 
 ## Recommendation Approach
 
